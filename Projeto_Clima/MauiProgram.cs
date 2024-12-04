@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Microsoft.Maui;
+using Microsoft.Maui.Controls.Hosting;
+using Microsoft.Maui.Hosting;
+using Projeto_Clima;
 
 namespace Projeto_Clima
 {
@@ -14,10 +17,6 @@ namespace Projeto_Clima
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-
-#if DEBUG
-    		builder.Logging.AddDebug();
-#endif
 
             return builder.Build();
         }

@@ -1,0 +1,27 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ProjetoClima.ViewModels"
+             x:Class="ProjetoClima.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:WeatherViewModel />
+    </ContentPage.BindingContext>
+
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Label Text="Digite o nome da cidade:"
+               FontSize="20"
+               HorizontalOptions="Center" />
+        <Entry Text="{Binding CityName}"
+               Placeholder="Ex: São Paulo"
+               IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBooleanConverter}}" />
+        <Button Text="Obter Clima"
+                Command="{Binding GetWeatherCommand}"
+                IsEnabled="{Binding IsBusy, Converter={StaticResource InvertedBooleanConverter}}" />
+        <ActivityIndicator IsVisible="{Binding IsBusy}"
+                           IsRunning="{Binding IsBusy}" />
+        <Label Text="{Binding WeatherInfo}"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalOptions="Center" />
+    </VerticalStackLayout>
+</ContentPage>

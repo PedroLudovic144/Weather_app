@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace Projeto_Clima
+namespace ProjetoClima.Models
 {
     public class WeatherResponse
     {
@@ -12,6 +8,7 @@ namespace Projeto_Clima
         public List<Weather> Weather { get; set; }
         public string Name { get; set; }
     }
+
     public class Main
     {
         public double Temp { get; set; }
@@ -23,4 +20,3 @@ namespace Projeto_Clima
         public string Description { get; set; }
     }
 }
-
